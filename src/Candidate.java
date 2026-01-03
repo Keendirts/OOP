@@ -1,40 +1,46 @@
-public class Candidate {
+import java.util.Objects;
 
-    private String name;
-    private int id;
+public class Candidate extends Person {
+
     private int score;
 
     public Candidate(String name, int id) {
-        this.name = name;
-        this.id = id;
+        super(name, id);
         this.score = 0;
+    }
+
+    @Override
+    public String getRole() {
+        return "Candidate";
     }
 
     public void addScore(int points) {
         score += points;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
     public int getScore() {
         return score;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public void setScore(int score) {
         this.score = score;
+    }
+
+    @Override
+    public String toString() {
+        return "Candidate{id=" + getId() + ", name='" + getName() + "', score=" + score + "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Candidate)) return false;
+        Candidate that = (Candidate) o;
+        return getId() == that.getId();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }

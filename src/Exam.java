@@ -15,28 +15,4 @@ public class Exam {
             candidate.addScore(question.getPoints());
         }
     }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public Question getQuestion() {
-        return question;
-    }
-
-    public Candidate getCandidate() {
-        return candidate;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public void setQuestion(Question question) {
-        this.question = question;
-    }
-
-    public void setCandidate(Candidate candidate) {
-        this.candidate = candidate;
-    }
 }
